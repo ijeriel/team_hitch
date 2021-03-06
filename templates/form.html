@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Speed Dating Form</title>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+    <body> 
+        <h3>Speed Dating Prediction</h3> 
+      
+    <div> 
+     <!-- Main Input For Receiving Query to our ML -->
+        <form method="POST" action="/send" role="form", name="datefrom">
+        <label for="match">The decision if you want to go see him/her again</label> 
+        <select id="match" name="match"> 
+            <option value="1">Yes</option> 
+            <option value="0">No</option> 
+        </select> 
+        <br> 
+        <label for="like">How much you like that person?</label> 
+        <select id="like" name="like"> 
+          <option value="1">1</option> 
+          <option value="2">2</option> 
+          <option value="3">3</option> 
+          <option value="4">4</option> 
+          <option value="5">5</option> 
+          <option value="6">6</option> 
+          <option value="7">7</option> 
+          <option value="8">8</option> 
+          <option value="9">9</option> 
+          <option value="10">10</option> 
+        </select> 
+        <br> 
+        <label for="attr">Rating of the subject?</label> 
+        <select id="attr" name="attr"> 
+            <option value="1">1</option> 
+            <option value="2">2</option> 
+            <option value="3">3</option> 
+            <option value="4">4</option> 
+            <option value="5">5</option> 
+            <option value="6">6</option> 
+            <option value="7">7</option> 
+            <option value="8">8</option> 
+            <option value="9">9</option> 
+            <option value="10">10</option> 
+        </select> 
+        <br> 
+        <label for="dec_o">Decision of the night of event</label> 
+        <select id="dec_o" name="dec_o"> 
+            <option value="1">1</option> 
+            <option value="2">2</option> 
+            <option value="3">3</option> 
+            <option value="4">4</option> 
+            <option value="5">5</option> 
+            <option value="6">6</option> 
+            <option value="7">7</option> 
+            <option value="8">8</option> 
+            <option value="9">9</option> 
+            <option value="10">10</option> 
+        </select> 
+        <br> 
+        <label for="prob">How probable do you think it is that this person will say 'yes' for you?</label> 
+        <select id="prob" name="prob"> 
+            <option value="1">Yes</option> 
+            <option value="0">No</option> 
+        </select> 
+        <br> 
+        <label for="sinc">How important you think sincere is for that person?</label> 
+        <select id="sinc" name="sinc"> 
+            <option value="1">1</option> 
+            <option value="2">2</option> 
+            <option value="3">3</option> 
+            <option value="4">4</option> 
+            <option value="5">5</option> 
+            <option value="6">6</option> 
+            <option value="7">7</option> 
+            <option value="8">8</option> 
+            <option value="9">9</option> 
+            <option value="10">10</option> 
+        </select> 
+        <br>
+        <label for="attr_2_1">What do you think the opposite sex looks for in a date?</label> 
+        <select id="attr_2_1" name="attr_2_1"> 
+            <option value="1">1</option> 
+            <option value="2">2</option> 
+            <option value="3">3</option> 
+            <option value="4">4</option> 
+            <option value="5">5</option> 
+            <option value="6">6</option> 
+            <option value="7">7</option> 
+            <option value="8">8</option> 
+            <option value="9">9</option> 
+            <option value="10">10</option> 
+        </select> 
+        <br> 
+        <label for="attr_1">Importance of the attribute?</label> 
+        <select id="attr_1" name="attr_1"> 
+            <option value="1">1</option> 
+            <option value="2">2</option> 
+            <option value="3">3</option> 
+            <option value="4">4</option> 
+            <option value="5">5</option> 
+            <option value="6">6</option> 
+            <option value="7">7</option> 
+            <option value="8">8</option> 
+            <option value="9">9</option> 
+            <option value="10">10</option> 
+        </select> 
+        <br> 
+        <button type="submit" name="submit">Predict Decision</button>
+        <input type="reset" name="reset" value="Reset"><br>
+
+		<br>
+        
+      </form> 
+
+    </div> 
+    </body> 
+    </html> 

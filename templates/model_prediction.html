@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speed Dating - ML Model Summary</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <a class="navbar-brand" href="#"><b>Team Hitch</b></a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="research_methodology.html">Research Methodology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dataset_observation.html">Dataset Selection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dataset_analysis.html">Dataset Analysis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="model_presentation.html">ML Models Analysis</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="model_prediction.html">Demo for Prediction</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+  <div class="container">
+    <!-- <div class="col-24 homebtn"> -->
+        <!-- <div class="btn-group" role="group" aria-label="Basic example"> -->
+            <!-- <a href="index.html" class="btn-gradient">Home</a>
+        <a href="research_methodology.html" class="btn-gradient">Reserach Methodology</a>
+        <a href="dataset_observation.html" class="btn-gradient">Dataset Selection</a>
+        <a href="dataset_analysis.html" class="btn-gradient">Dataset Analysis</a>
+        <a href="model_presentation" class="btn-gradient">ML Models Analysis</a>
+        <a href="model_prediction" class="btn-gradient">Demo for Prediction</a> -->
+            <!-- <button type = "button" class = "btn-secondary"> <a href="index.html">Home</a></button>
+            <button type = "button" class = "btn-secondary"> <a href="research_methodology.html">Reserach Methodology</a></button>
+            <button type = "button" class = "btn-secondary"> <a href="dataset_observation.html">Dataset Selection</a></button>
+            <button type = "button" class = "btn-secondary"> <a href="dataset_analysis.html">Dataset Analysis</a></button>
+            <button type = "button" class = "btn-secondary"> <a href="model_presentation.html">ML Models Analysis</a></button>
+            <button type = "button" class = "btn-secondary"> <a href="model_prediction.html">Demo for Prediction</a></button> -->
+        <!-- </div> -->
+    <!-- </div> -->
+  </div>    
+
+  <br>
+
+  <div class="container">
+    <!-- Main Input For Receiving Query to our ML -->
+       <form method="POST" action="/send" role="form", name="datefrom">
+       <label for="match">The decision if you want to go see him/her again</label> 
+       <select id="match" name="match"> 
+           <option value="1">Yes</option> 
+           <option value="0">No</option> 
+       </select> 
+       <br> 
+       <label for="like">How much you like that person?</label> 
+       <select id="like" name="like"> 
+         <option value="1">1</option> 
+         <option value="2">2</option> 
+         <option value="3">3</option> 
+         <option value="4">4</option> 
+         <option value="5">5</option> 
+         <option value="6">6</option> 
+         <option value="7">7</option> 
+         <option value="8">8</option> 
+         <option value="9">9</option> 
+         <option value="10">10</option> 
+       </select> 
+       <br> 
+       <label for="attr">Rating of the subject?</label> 
+       <select id="attr" name="attr"> 
+           <option value="1">1</option> 
+           <option value="2">2</option> 
+           <option value="3">3</option> 
+           <option value="4">4</option> 
+           <option value="5">5</option> 
+           <option value="6">6</option> 
+           <option value="7">7</option> 
+           <option value="8">8</option> 
+           <option value="9">9</option> 
+           <option value="10">10</option> 
+       </select> 
+       <br> 
+       <label for="dec_o">Decision of the night of event</label> 
+       <select id="dec_o" name="dec_o"> 
+  
+           <option value="1">1</option> 
+           <option value="2">2</option> 
+           <option value="3">3</option> 
+           <option value="4">4</option> 
+           <option value="5">5</option> 
+           <option value="6">6</option> 
+           <option value="7">7</option> 
+           <option value="8">8</option> 
+           <option value="9">9</option> 
+           <option value="10">10</option> 
+       </select> 
+       <br> 
+       <label for="prob">How probable do you think it is that this person will say 'yes' for you?</label> 
+       <select id="prob" name="prob"> 
+   
+           <option value="1">Yes</option> 
+           <option value="0">No</option> 
+       </select> 
+       <br> 
+       <label for="sinc">How important you think sincere is for that person?</label> 
+       <select id="sinc" name="sinc"> 
+        
+           <option value="1">1</option> 
+           <option value="2">2</option> 
+           <option value="3">3</option> 
+           <option value="4">4</option> 
+           <option value="5">5</option> 
+           <option value="6">6</option> 
+           <option value="7">7</option> 
+           <option value="8">8</option> 
+           <option value="9">9</option> 
+           <option value="10">10</option> 
+       </select> 
+       <br>
+       <label for="attr_2_1">What do you think the opposite sex looks for in a date?</label> 
+       <select id="attr_2_1" name="attr_2_1">
+       
+           <option value="1">1</option> 
+           <option value="2">2</option> 
+           <option value="3">3</option> 
+           <option value="4">4</option> 
+           <option value="5">5</option> 
+           <option value="6">6</option> 
+           <option value="7">7</option> 
+           <option value="8">8</option> 
+           <option value="9">9</option> 
+           <option value="10">10</option> 
+       </select> 
+       <br> 
+       <label for="attr_1">Importance of the attribute?</label> 
+       <select id="attr_1" name="attr_1"> 
+       
+           <option value="1">1</option> 
+           <option value="2">2</option> 
+           <option value="3">3</option> 
+           <option value="4">4</option> 
+           <option value="5">5</option> 
+           <option value="6">6</option> 
+           <option value="7">7</option> 
+           <option value="8">8</option> 
+           <option value="9">9</option> 
+           <option value="10">10</option> 
+       </select> 
+       <br> 
+       <button type="submit" name="submit">Predict Decision</button>
+       <input type="reset" name="reset" value="Reset"><br>
+​
+   <br>
+
+   <!-- Nikole to add result -->
+   <h1> Predicted Final Decision</h1>
+   <h2>{{ predict_text }}</h2>
+
+     </form> 
+​
+   </div> 
+   </body> 
+   </html> 

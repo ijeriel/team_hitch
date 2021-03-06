@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speed Dating - ML Model</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <a class="navbar-brand" href="#"><b>Team Hitch</b></a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="research_methodology.html">Research Methodology</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dataset_observation.html">Dataset Selection</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="dataset_analysis.html">Dataset Analysis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="model_presentation.html">ML Models Analysis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="model_prediction.html">Demo for Prediction</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="container">
+        <div class="col-24 homebtn">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <!-- <a href="index.html" class="btn-gradient">Home</a>
+		        <a href="research_methodology.html" class="btn-gradient">Reserach Methodology</a>
+		        <a href="dataset_observation.html" class="btn-gradient">Dataset Selection</a>
+		        <a href="dataset_analysis.html" class="btn-gradient">Dataset Analysis</a>
+		        <a href="model_presentation" class="btn-gradient">ML Models Analysis</a>
+		        <a href="model_prediction" class="btn-gradient">Demo for Prediction</a> -->
+                <!-- <button type = "button" class = "btn-secondary"> <a href="index.html">Home</a></button>
+                <button type = "button" class = "btn-secondary"> <a href="research_methodology.html">Reserach Methodology</a></button>
+                <button type = "button" class = "btn-secondary"> <a href="dataset_observation.html">Dataset Selection</a></button>
+                <button type = "button" class = "btn-secondary"> <a href="dataset_analysis.html">Dataset Analysis</a></button>
+                <button type = "button" class = "btn-secondary"> <a href="model_presentation.html">ML Models Analysis</a></button>
+                <button type = "button" class = "btn-secondary"> <a href="model_prediction.html">Demo for Prediction</a></button> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div>  -->
+
+    <br>
+
+    
+
+    
+    <div id = "slider">
+
+      <div id ="box">
+          <img src = "../static/images/correlation_pairplot.png" width="1000">
+
+      </div>
+
+
+      <button class ='prew' onclick = "prewImage()">-</button>
+      <button class ='next' onclick = "nextImage()">+</button>
+
+      <script type ="text/javascript">
+
+          var slider_content = document.getElementById('box');
+
+          // content the images in ab array
+          var image = ['correlation_pairplot','heatmapcorrelationbox','joint_grid','candleboxplot','countplot','distplot1','distplot2'];
+
+          var i = image.length;
+
+          // function for nextt slide
+          function nextImage() {
+                  if (i<image.length){
+                      i =i+1;
+                  } 
+                  else {
+                      i = 1;
+                  }
+
+                  slider_content.innerHTML = "<img src = ../static/images/" + image[i-1]+".png>";
+          }
+
+
+          // function for previous slide
+
+          function prewImage() {
+                  if (i < image.length +1 && i > 1){
+                      i =i-1;
+                  } 
+                  else {
+                      i = image.length;
+                  }
+
+                  slider_content.innerHTML = "<img src = ../static/images/" + image[i-1]+".png>";
+
+          }
+
+
+
+      </script>
+  </div>
+
+    
+    
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+
+
+</body>
+</html>

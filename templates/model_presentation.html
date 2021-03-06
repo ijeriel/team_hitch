@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speed Dating - ML Model Summary</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/style.css">
+
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <a class="navbar-brand" href="#"><b>Team Hitch</b></a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="research_methodology.html">Research Methodology</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dataset_observation.html">Dataset Selection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dataset_analysis.html">Dataset Analysis</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="model_presentation.html">ML Models Analysis</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="model_prediction.html">Demo for Prediction</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- <div class="row">
+    <div class="col-12 homebtn ">
+        <div class="btn-group" role="group" aria-label="Basic example">
+        <button type = "button" class = "btn btn-secondary "> <a href="index.html">Home</a></button>
+        <button type = "button" class = "btn btn-secondary "> <a href="research_methodology.html">Reserach Methodology</a></button>
+        <button type = "button" class = "btn btn-secondary "> <a href="dataset_observation.html">Dataset Selection</a></button>
+        <button type = "button" class = "btn btn-secondary "> <a href="dataset_analysis.html">Dataset Analysis</a></button>
+        <button type = "button" class = "btn btn-secondary "> <a href="model_presentation.html">ML Models Analysis</a></button>
+        <button type = "button" class = "btn btn-secondary "> <a href="model_prediction.html">Demo for Prediction</a></button>
+    </div>
+  </div> -->
+
+<div class="container">
+  <div class="row justify-content-end">
+    <div class="col-md-6">
+      <div class="well">
+        <h5>Select:</h5>
+        <select id = 'dlist' onChange ="swapImage()" >
+            <option value="../static/images/KNN_classification_table.png" >KNN Model</option>
+            <option value="../static/images/random_classification_table.png" >Random Forest Model</option>
+            <option value="../static/images/logistic_classification_table.png" >Logistic Model</option>
+        </select>
+      </div>  
+    </div>  
+  </div>  
+
+<!-- <div class="container"> -->
+
+    <div class="row"> 
+        <br>
+
+          <div class="row mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div class="col-md-6">
+              <h6><strong> Decision Tree Model</strong> </h6> 
+              <img src="../static/images/decisiontree_classification_table.PNG" class="img-fluid" alt="Responsive image"></img>
+              
+              </div>
+
+              <div class="col-md-6">
+              <img id = "imageToSwap" src="../static/images/KNN_classification_table.png" class="img-fluid" alt="Responsive image" ></img>
+              <h6> <div id = "textToSwap"> KNN Model </h6></div> 
+          </div>
+    </div>   
+</div>
+
+<div class="container">
+  <div class="row bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 align-self-center overflow-hidden">
+    <div class="col">
+      <img src="../static/images/confusion_matrix.png" class="img-fluid" alt="Responsive image"></img>
+    </div>
+    <div class="col align-self-center">
+      <img src="../static/images/accuracy_training.png" class="img-fluid" alt="Responsive image"></img>
+    </div>
+  </div>
+<br>
+<div id="sample-metadata" class="col-12 text-center zoom-within-container"></div>
+  <div class="row">
+            <div class="col-12 text-center">Tree Map</div>
+            <img src="../static/images/gini_Decision_Tree.png" class="img-fluid" alt="Responsive image"></img>
+            
+  </div>
+  <br>
+  <div class="row justify-content-center row bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
+            <img src="../static/images/featureimportance.png" class="img-fluid" alt="Responsive image"></img>
+  </div>
+
+
+</div>
+
+  
+
+<script type="text/javascript">
+
+  function swapImage(){
+      var image = document.getElementById("imageToSwap");
+      var dropd = document.getElementById("dlist");
+      image.src = dropd.value;
+      
+      function getSelectedText(elementId) {
+          var elt = document.getElementById(elementId);
+
+          if (elt.selectedIndex == -1)
+              return null;
+
+          return elt.options[elt.selectedIndex].text;
+        }
+
+        var text = getSelectedText('dlist');
+
+      var filltext = document.getElementById("textToSwap");
+      filltext.innerHTML = text
+
+  };
+
+  
+</script>
+
+
+      
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
